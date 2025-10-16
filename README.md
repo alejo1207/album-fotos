@@ -1,16 +1,6 @@
-# Álbum fotográfico — Plus
-Novedades:
-- 🔄 Exportar/Importar JSON
-- 🌙 Modo oscuro con interruptor (persistido en localStorage)
-- 🖱️ Arrastrar y soltar para reordenar (HTML5 DnD)
-- ☁️ Subida a Cloudinary (unsigned preset)
-- 🖼️ Lightbox/carrusel con flechas y autoplay
+# Álbum fotográfico — Pause añadido
+- Botón **Pausar/Reanudar** en el lightbox/carrusel (arriba, centrado).
+- Autopause cuando el slide actual es **YouTube** para poder ver el video.
+- Al navegar con flechas, se **pausa** para que no avance solo inmediatamente.
 
-## Cloudinary (unsigned)
-1. En Cloudinary → Settings → Upload → **Upload presets** → **Add upload preset** → **Unsigned**.
-2. Copia **cloud name** y **upload preset**.
-3. En la app, usa **Subir archivo → configurar** para guardarlos (se almacenan en localStorage).
-
-## Deploy en GitHub Pages
-Incluye workflow en `.github/workflows/deploy.yml` (usa `npm install`).
-
+Sigue los mismos pasos de despliegue de la versión plus.

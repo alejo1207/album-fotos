@@ -35,3 +35,4 @@ body { @apply text-slate-800 dark:text-slate-100; }
 
 .lightbox-backdrop { @apply fixed inset-0 bg-black/80 z-50 grid place-items-center p-4; }
 .lightbox-btn { @apply absolute top-1/2 -translate-y-1/2 p-2 rounded-full bg-white/80 dark:bg-slate-800/80 hover:bg-white dark:hover:bg-slate-800; }
+.lightbox-topbar { @apply absolute top-4 left-1/2 -translate-x-1/2 flex items-center gap-2 bg-white/80 dark:bg-slate-800/80 rounded-full px-3 py-1.5 shadow; }
