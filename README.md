@@ -1,45 +1,16 @@
-# Álbum fotográfico (React + Vite + Tailwind)
+# Álbum fotográfico — Plus
+Novedades:
+- 🔄 Exportar/Importar JSON
+- 🌙 Modo oscuro con interruptor (persistido en localStorage)
+- 🖱️ Arrastrar y soltar para reordenar (HTML5 DnD)
+- ☁️ Subida a Cloudinary (unsigned preset)
+- 🖼️ Lightbox/carrusel con flechas y autoplay
 
-App de una sola página para organizar **fotos** por secciones y **videos de YouTube**. Todo se guarda en `localStorage` (no requiere backend).
+## Cloudinary (unsigned)
+1. En Cloudinary → Settings → Upload → **Upload presets** → **Add upload preset** → **Unsigned**.
+2. Copia **cloud name** y **upload preset**.
+3. En la app, usa **Subir archivo → configurar** para guardarlos (se almacenan en localStorage).
 
-## Demo local
+## Deploy en GitHub Pages
+Incluye workflow en `.github/workflows/deploy.yml` (usa `npm install`).
 
-```bash
-npm install
-npm run dev
-```
-
-Abre http://localhost:5173
-
-## Despliegue en GitHub Pages
-
-Este repo ya incluye un workflow para publicar en **GitHub Pages** usando **GitHub Actions**.
-
-1. Crea un repositorio en GitHub (puedes llamarlo como quieras).
-2. Sube el código (ver pasos abajo).
-3. En GitHub, ve a **Settings → Pages** y en “Source” elige **GitHub Actions**.
-4. El workflow construirá y publicará automáticamente la carpeta `dist/` en Pages.
-
-### ¿Por qué no tengo que tocar el `base` de Vite?
-El archivo `vite.config.js` infiere automáticamente el `base` como `/<nombre-del-repo>/` cuando corre en Actions. Localmente usa `/`.
-
-## Subir a GitHub (primera vez)
-
-```bash
-git init
-git add .
-git commit -m "init: álbum fotográfico"
-git branch -M main
-git remote add origin https://github.com/<tu-usuario>/<tu-repo>.git
-git push -u origin main
-```
-
-Luego de unos minutos verás tu sitio en **Settings → Pages**.
-
-## Scripts
-- `npm run dev` — desarrollo
-- `npm run build` — build de producción
-- `npm run preview` — servidor para previsualizar producción
-
-## Licencia
-MIT

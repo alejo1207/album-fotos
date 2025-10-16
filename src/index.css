@@ -2,19 +2,36 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Small tweaks for cards and masonry */
-.card { @apply bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden; }
+:root {
+  --card-bg: theme(colors.white);
+  --text-main: theme(colors.slate.800);
+  --muted: theme(colors.slate.500);
+  --border: theme(colors.slate.200);
+}
+.dark :root, .dark {
+  --card-bg: theme(colors.slate.800);
+  --text-main: theme(colors.slate.100);
+  --muted: theme(colors.slate.400);
+  --border: theme(colors.slate.700);
+}
+
+body { @apply text-slate-800 dark:text-slate-100; }
+
+.card { @apply rounded-2xl shadow-sm border overflow-hidden; border-color: var(--border); background: var(--card-bg); }
 .btn { @apply inline-flex items-center gap-2 rounded-xl px-3 py-2 text-sm font-medium transition active:scale-[.98]; }
-.btn-primary { @apply bg-slate-900 text-white hover:bg-slate-800; }
-.btn-ghost { @apply hover:bg-slate-100; }
-.btn-outline { @apply border border-slate-300 hover:bg-white; }
-.input { @apply w-full rounded-xl border border-slate-300 px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-slate-400; }
-.badge { @apply inline-flex items-center rounded-full border border-slate-300 px-2 py-0.5 text-xs; }
+.btn-primary { @apply bg-slate-900 text-white hover:bg-slate-800 dark:bg-slate-100 dark:text-slate-900 dark:hover:bg-white; }
+.btn-ghost { @apply hover:bg-slate-100 dark:hover:bg-slate-800; }
+.btn-outline { @apply border hover:bg-white dark:hover:bg-slate-800; border-color: var(--border); }
+.input { @apply w-full rounded-xl border px-3 py-2 text-sm outline-none focus:ring-2; border-color: var(--border); }
+.badge { @apply inline-flex items-center rounded-full border px-2 py-0.5 text-xs; border-color: var(--border); }
 .tabs { @apply flex flex-wrap gap-2; }
-.tab { @apply px-3 py-1.5 rounded-full border border-slate-300 text-sm hover:bg-white; }
-.tab-active { @apply bg-slate-900 text-white border-slate-900; }
+.tab { @apply px-3 py-1.5 rounded-full border text-sm hover:bg-white dark:hover:bg-slate-800; border-color: var(--border); }
+.tab-active { @apply bg-slate-900 text-white border-slate-900 dark:bg-slate-100 dark:text-slate-900 dark:border-slate-100; }
 
 .masonry { column-gap: 1rem; }
 @media (min-width: 640px) { .masonry { column-count: 2; } }
 @media (min-width: 1024px) { .masonry { column-count: 3; } }
 .masonry-item { break-inside: avoid; margin-bottom: 1rem; }
+
+.lightbox-backdrop { @apply fixed inset-0 bg-black/80 z-50 grid place-items-center p-4; }
+.lightbox-btn { @apply absolute top-1/2 -translate-y-1/2 p-2 rounded-full bg-white/80 dark:bg-slate-800/80 hover:bg-white dark:hover:bg-slate-800; }
